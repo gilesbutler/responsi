@@ -1,0 +1,59 @@
+/*
+*
+* File name: main.less
+* Info: Main Section Styles
+*
+*/
+
+.main {
+  height: 85%;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  .responsi-frame {
+    background: white;
+    border: 1px solid #000;
+    height: 480px;
+    position: relative;
+    width: 320px;
+    // Resize Handles
+    .ui-resizable-handle {
+      position: absolute;
+      font-size: 0.1px;
+      display: block;
+    }
+    .ui-resizable-e {
+      cursor: e-resize;
+      width: 7px;
+      right: -5px;
+      top: 0;
+      height: 100%;
+    }
+    .ui-resizable-s {
+      cursor: s-resize;
+      height: 7px;
+      width: 100%;
+      bottom: -5px;
+      left: 0;
+    }
+    .ui-resizable-se {
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid black; 
+      border-left:10px solid transparent;
+      bottom: 1px;
+      cursor: se-resize;
+      height: 0; 
+      right: 1px;
+      width: 0; 
+    }
+    .mask {
+      display: none;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

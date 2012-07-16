@@ -1,0 +1,68 @@
+/*
+*
+* File name: header.less
+* Info: Header Styles
+*
+*/
+
+.header {
+  background: @color1;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  .container {
+    .column(12);
+    .clearfix();
+    display: block;
+    float: none;
+    margin: 0 auto;
+    h1 {
+      #hl.text-shadow(1px, 1px, 1px, #fff);
+      color: @color2;
+      display: inline-block;
+      float: left;
+      font-size: 30px;
+      letter-spacing: -2px;
+      margin: 0;
+    }
+    #controls {
+      float: right;
+      text-align: right;
+      width: 75%;
+      .url-input {
+        #hl.round-all-corners();
+        background: #fff;
+        border: 1px solid #ddd;
+        color: lighten(@color2, 5%);
+        display: inline-block;
+        font-size: 16px;
+        height: 31px;
+        line-height: 18px;
+        margin: 0;
+        padding: 4px 10px 2px;
+        vertical-align: bottom;
+        width: 50%;
+        &:focus {
+          outline: none;
+        }
+      }
+      .url-submit {
+        .btn();
+      }
+      .rotate {
+        .btn();
+      }
+    }
+  }
+}
+::-webkit-input-placeholder {
+  color: @color3;
+  font-size: 16px;
+}
+:-moz-placeholder {
+  color: @color3;
+  font-size: 16px;
+}
+:-ms-input-placeholder {
+  color: @color3;
+  font-size: 16px;
+}
