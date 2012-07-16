@@ -10,7 +10,7 @@ class App extends Spine.Controller
     super
     @responsi = new Responsi
     @append @responsi.active()
-    
+
     Spine.Route.setup(history: true)
 
 module.exports = App

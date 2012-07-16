@@ -36,6 +36,7 @@ class Index extends Spine.Controller
   changeSize: (e) ->
     e.preventDefault()
     @frameHolder = $('#frame_holder')
+    $('#intro').fadeOut()
     index = e.currentTarget.selectedIndex
     if index is 0 and e.currentTarget[0].value is '---'
       return false

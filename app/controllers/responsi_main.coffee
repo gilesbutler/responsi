@@ -7,6 +7,7 @@ class Index extends Spine.Controller
 
   elements:
     '#frame_holder':  'frameHolder'
+    '#intro':         'intro'
 
   constructor: ->
     super
@@ -23,24 +24,15 @@ class Index extends Spine.Controller
         #enable a mask over the Iframe to prevent it from stealing mouse events
         mask.style.display = 'block'
         $("#sizes").selectbox("close")
+        $('#intro').fadeOut('slow')
       resize: (event, ui) ->
         dimensions = event.clientX + ' x ' + event.clientY
         # sizes[0].selected = true
-        # sizes[0].text = dimensions
         $sbSelector.text(dimensions)
         $sbOptionsFirst.text(dimensions)
       stop: (event, ui) ->
         # remove mask when dragging ends
         mask.style.display = 'none'
-        # dimensions = event.clientX + ' x ' + event.clientY
-        # attrs = event.clientX + 'x' + event.clientY
-        # sizes[0].text = dimensions
-        # sizes[0].value = attrs
-        # sizes[0].setAttribute('data-width', event.clientX)
-        # sizes[0].setAttribute('data-height', event.clientY)
-        # $sbOptionsFirst.attr
-        #   'href': '#' + attrs
-        #   'rel': attrs
 
   change: (params) =>
     @render()

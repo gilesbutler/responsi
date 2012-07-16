@@ -9,12 +9,14 @@
   height: 85%;
   margin-bottom: 20px;
   padding: 0 10px;
+  position: relative;
   .responsi-frame {
     background: white;
     border: 1px solid #000;
     height: 480px;
     position: relative;
     width: 320px;
+    z-index: 1;
     // Resize Handles
     .ui-resizable-handle {
       position: absolute;
@@ -55,5 +57,25 @@
       height: 100%;
       width: 100%;
     }
+  }
+  #intro {
+    background: url(images/css/intro.png) no-repeat 0 0;
+    height: 510px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 750px;
+  }
+  #logo {
+    background: url(images/css/logo.png) no-repeat 0 0;
+    height: 89px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 200px;
+    width: 455px;
   }
 }
