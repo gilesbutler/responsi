@@ -31,7 +31,10 @@ class Index extends Spine.Controller
     @mainFrame = $('#main_frame')
     @url = @urlInput.val()
     if @url
-      @mainFrame.attr('src', @url)
+      if @url.match '^https?://'
+        @mainFrame.attr('src', @url)
+      else
+        @mainFrame.attr('src', 'http://' + @url)
 
   changeSize: (e) ->
     e.preventDefault()
