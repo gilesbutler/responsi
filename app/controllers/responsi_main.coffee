@@ -24,6 +24,7 @@ class Index extends Spine.Controller
     @reLoadUrl()
     # Check for sizes in localStorage
     @reLoadSizes()
+    # Setup resize plugin
     mask = document.querySelector '.mask'
     sizes = document.getElementById 'sizes'
     @frameHolder.resizable
