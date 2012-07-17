@@ -22,6 +22,7 @@ class Index extends Spine.Controller
   render: ->
     @html require('views/shared/_header')
     $('#sizes').selectbox()
+    @reLoadSizes()
 
   change: (params) =>
     @render()
@@ -30,11 +31,15 @@ class Index extends Spine.Controller
     e.preventDefault()
     @mainFrame = $('#main_frame')
     @url = @urlInput.val()
+    # Check to see if there is an input
     if @url
-      if @url.match '^https?://'
-        @mainFrame.attr('src', @url)
-      else
-        @mainFrame.attr('src', 'http://' + @url)
+      # Check the input has http:// if not add it
+      if !@url.match '^https?://'
+        @url = 'http://' + @url
+      # Set frame src to the url
+      @mainFrame.attr 'src', @url
+      # Save url to localStorage
+      localStorage.setItem 'url', @url
 
   changeSize: (e) ->
     e.preventDefault()
@@ -46,12 +51,20 @@ class Index extends Spine.Controller
     else
       sizes = $(e.currentTarget[index]).data()
       @frameHolder.height(sizes.height).width(sizes.width)
+      localStorage.setItem 'height', sizes.height
+      localStorage.setItem 'width', sizes.width
 
   rotate: ->
     @frameHolder = $('#frame_holder')
     height = @frameHolder.height()
     width = @frameHolder.width()
     @frameHolder.height(width).width(height)
+
+  reLoadSizes: ->
+    width = localStorage.getItem "width"
+    height = localStorage.getItem "height"
+    if height and width
+      $('.sbSelector').text(width + ' x ' + height)
 
 class Header extends Spine.Stack
   className: 'header stack'
