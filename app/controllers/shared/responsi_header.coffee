@@ -13,7 +13,7 @@ class Index extends Spine.Controller
     "#tip":         "tip"
 
   events: 
-    "click .url-submit":  "loadUrl"
+    "click .url-submit":  "submit"
     "change .sizes":      "changeSize"
     "click .rotate":      "rotate"
 
@@ -21,28 +21,32 @@ class Index extends Spine.Controller
     super
     @active @change
 
-  render: ->
+  render: (params) ->
     @html require('views/shared/_header')
     $('#sizes').selectbox()
     @reLoadSizes()
     @setupBookmarklet()
+    if params
+      @loadUrl params
 
   change: (params) =>
-    @render()
+    @render(params)
 
-  loadUrl: (e) ->
+  submit: (e) ->
     e.preventDefault()
+    if @urlInput.val()
+      @loadUrl @urlInput.val()
+
+  loadUrl: (url) ->
     @mainFrame = $('#main_frame')
-    @url = @urlInput.val()
-    # Check to see if there is an input
-    if @url
-      # Check the input has http:// if not add it
-      if !@url.match '^https?://'
-        @url = 'http://' + @url
-      # Set frame src to the url
-      @mainFrame.attr 'src', @url
-      # Save url to localStorage
-      localStorage.setItem 'url', @url
+    # Check the input has http:// if not add it
+    if !url.match '^https?://'
+      url = 'http://' + url
+      @urlInput.val(url)
+    # Set frame src to the url
+    @mainFrame.attr 'src', url
+    # Save url to localStorage
+    localStorage.setItem 'url', url
 
   changeSize: (e) ->
     e.preventDefault()
@@ -70,7 +74,7 @@ class Index extends Spine.Controller
       $('.sbSelector').text(width + ' x ' + height)
 
   setupBookmarklet: ->
-    data = "javascript:(function(){window.resizeTo(1280, 720)})();"
+    data = "javascript:(function(){var url=window.document.location.href;window.document.location.href='http://respon.si/#/'+url})()"
     @bookmarklet.attr('href', data).hover( 
       => @tip.slideDown 'slow'
       => @tip.slideUp 'slow'

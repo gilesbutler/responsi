@@ -15,8 +15,8 @@ class Responsis extends Spine.Controller
     @main    = new Main
 
     @routes
-      '/': (params) ->
-        @header.index.active()
+      '/:url': (params) ->
+        @header.index.active(params.url)
         @main.index.active()
     
     @append @header, @main
