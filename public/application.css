@@ -1152,15 +1152,18 @@ body {
   width: 1px;
 }
 .header .container .bookmark {
-  background: url(images/css/bookmark.png) no-repeat 0 0;
+  background: url(images/css/bookmark.png) no-repeat 9px 0;
   display: inline-block;
   float: right;
-  height: 30px;
-  margin-top: 17px;
+  height: 39px;
+  margin-top: 7px;
   text-decoration: none;
   text-indent: -9999px;
   vertical-align: top;
-  width: 14px;
+  width: 24px;
+}
+.header .container .bookmark:hover {
+  background-position: -27px 0;
 }
 .header .container #tip {
   text-shadow: 1px 1px 0 #ffffff;
