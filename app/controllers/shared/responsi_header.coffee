@@ -9,6 +9,8 @@ class Index extends Spine.Controller
     ".url-input":   "urlInput"
     ".url-submit":  "urlSubmit"
     "#sizes":       "sizes"
+    "#bookmarklet": "bookmarklet"
+    "#tip":         "tip"
 
   events: 
     "click .url-submit":  "loadUrl"
@@ -23,6 +25,7 @@ class Index extends Spine.Controller
     @html require('views/shared/_header')
     $('#sizes').selectbox()
     @reLoadSizes()
+    @setupBookmarklet()
 
   change: (params) =>
     @render()
@@ -65,6 +68,13 @@ class Index extends Spine.Controller
     height = localStorage.getItem "height"
     if height and width
       $('.sbSelector').text(width + ' x ' + height)
+
+  setupBookmarklet: ->
+    data = "javascript:(function(){window.resizeTo(1280, 720)})();"
+    @bookmarklet.attr('href', data).hover( 
+      => @tip.slideDown 'slow'
+      => @tip.slideUp 'slow'
+    )
 
 class Header extends Spine.Stack
   className: 'header stack'
