@@ -8,49 +8,98 @@
 .header {
   background: @color1;
   margin-bottom: 20px;
-  padding: 10px 0;
+  // padding: 10px 0;
   .container {
     .column(12);
     .clearfix();
     display: block;
     float: none;
+    line-height: 0;
     margin: 0 auto;
     h1 {
       #hl.text-shadow(1px, 1px, 1px, #fff);
       color: @color2;
       display: inline-block;
       float: left;
-      font-size: 30px;
+      font-size: 45px;
       letter-spacing: -2px;
-      margin: 0;
-      padding-top: 2px;
+      line-height: 40px;
+      margin: 10px 0 0;
     }
-    #controls {
-      float: right;
-      text-align: right;
-      width: 75%;
-      .url-input {
-        #hl.round-all-corners();
-        background: #fff;
-        border: 1px solid #ddd;
-        color: lighten(@color2, 5%);
+    > section {
+      #controls {
         display: inline-block;
-        font-size: 16px;
-        height: 31px;
-        line-height: 18px;
-        margin: 0;
-        padding: 4px 10px 2px;
-        vertical-align: bottom;
-        width: 50%;
-        &:focus {
-          outline: none;
+        float: right;
+        margin-top: 11px;
+        text-align: right;
+        vertical-align: top;
+        width: 70%;
+        .url-input {
+          #hl.round-all-corners();
+          background: #fff;
+          border: 1px solid #ddd;
+          color: lighten(@color2, 5%);
+          display: inline-block;
+          font-size: 16px;
+          height: 31px;
+          line-height: 18px;
+          margin: 0;
+          padding: 4px 10px 2px;
+          vertical-align: bottom;
+          width: 45%;
+          &:focus {
+            outline: none;
+          }
+        }
+        .url-submit {
+          .btn();
+        }
+        .rotate {
+          .btn();
         }
       }
-      .url-submit {
-        .btn();
+    }
+    .divider {
+      background-color: #ddd;
+      border-right: 1px solid #fff;
+      display: inline-block;
+      float: right;
+      height: 60px;
+      margin: 0 9px;
+      overflow: hidden;
+      width: 1px;
+    }
+    .bookmark {
+      background: url(images/css/bookmark.png) no-repeat 0 0;
+      display: inline-block;
+      float: right;
+      height: 30px;
+      margin-top: 17px;
+      position: relative;
+      text-decoration: none;
+      text-indent: -9999px;
+      vertical-align: top;
+      width: 14px;
+      span {
+        #hl.text-shadow(1px, 1px, 0, #fff);
+        #hl.rounded-corners(0, 0, 10px, 10px);
+        position: absolute;
+        text-indent: 0;
+        bottom: -49px;
+        display: none;
+        left: -47px;
+        background: @color1;
+        width: 100px;
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: center;
+        color: @color2;
+        padding: 10px 5px 5px;
       }
-      .rotate {
-        .btn();
+      &:hover {
+        span {
+          display: block;
+        }
       }
     }
   }

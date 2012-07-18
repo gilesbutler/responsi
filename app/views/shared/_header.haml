@@ -1,22 +1,27 @@
 .container
   %h1 « Responsi »
-  %form#controls
-    %input{ name: "url", type: "text", placeholder: "Enter the url you want to test&hellip;", class: "url-input" }
-    %input{ name: "submit", type: "submit", value: "Go", class: "url-submit" }
-    %select{ name: "sizes", class: "sizes", id: "sizes" }
-      %option{ value: "---", selected: true, disabled: true } Size&hellip;
-      %option{ value: "320x480", data: { width: 320, height: 480 } }
-        320 x 480
-      %option{ value: "360x640", data: { width: 360, height: 640 } }
-        360 x 640
-      %option{ value: "768x1024", data: { width: 768, height: 1024 } }
-        768 x 1024
-      %option{ value: "800x1280", data: { width: 800, height: 1280 } }
-        800 x 1280
-      %option{ value: "980x1280", data: { width: 980, height: 1280 } }
-        980 x 1280
-      %option{ value: "1280x600", data: { width: 1280, height: 600 } }
-        1280 x 600
-      %option{ value: "1920x900", data: { width: 1920, height: 900 } }
-        1920 x 900
-    %input{ name: "rotate", type: "button", value: "Rotate", class: "rotate" }
+  %section
+    %a{ class: 'bookmark', id: 'bookmarklet', href: "#" } bookmarklet
+      %span
+        Drag me to your bookmarks!
+    .divider
+    %form#controls
+      %input{ name: "url", type: "text", placeholder: "Enter the url you want to test&hellip;", class: "url-input" }
+      %input{ name: "submit", type: "submit", value: "Go", class: "url-submit" }
+      %select{ name: "sizes", class: "sizes", id: "sizes" }
+        %option{ value: "---", selected: true, disabled: true } Size&hellip;
+        %option{ value: "320x480", data: { width: 320, height: 480 } }
+          320 x 480
+        %option{ value: "360x640", data: { width: 360, height: 640 } }
+          360 x 640
+        %option{ value: "768x1024", data: { width: 768, height: 1024 } }
+          768 x 1024
+        %option{ value: "800x1280", data: { width: 800, height: 1280 } }
+          800 x 1280
+        %option{ value: "980x1280", data: { width: 980, height: 1280 } }
+          980 x 1280
+        %option{ value: "1280x600", data: { width: 1280, height: 600 } }
+          1280 x 600
+        %option{ value: "1920x900", data: { width: 1920, height: 900 } }
+          1920 x 900
+      %input{ name: "rotate", type: "button", value: "Rotate", class: "rotate" }
