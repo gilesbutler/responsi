@@ -1,7 +1,10 @@
 .sbHolder{
+  #hl.drop-shadow(2px, 2px, 2px, #fff);
   #hl.round-all-corners();
   background: #fff;
-  border: 1px solid #ddd;
+  border-color: #ddd #f0f0f0 #f0f0f0 #ddd;
+  border-style: solid;
+  border-width: 1px;
   display: inline-block;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -25,7 +28,7 @@
   width: 90px;
 }
 .sbSelector:link, .sbSelector:visited, .sbSelector:hover{
-  color: @color3;
+  color: lighten(@color4, 10%);
   outline: none;
   text-decoration: none;
 }
@@ -60,8 +63,9 @@
 }
 .sbOptions{
   #hl.rounded-corners(0, 0, 5px, 5px);
-  background-color: #fff;
+  background-color: #fefefe;
   border: solid 1px #ddd;
+  border-right-color: #f0f0f0;
   border-top: 0;
   list-style: none;
   left: -1px;
@@ -75,23 +79,26 @@
   overflow-y: auto;
 }
 .sbOptions li{
+  line-height: 1;
   padding: 0 7px;
+  &:last-child {
+    a {
+      border-bottom: none;
+    }
+  }
 }
 .sbOptions a{
   border-bottom: dashed 1px #ddd;
   display: block;
   outline: none;
   padding: 7px 0 7px 3px;
-  &:last-child {
-    border-bottom: none;
-  }
 }
 .sbOptions a:link, .sbOptions a:visited{
-  color: #666;
+  color: lighten(@color4, 10%);
   text-decoration: none;
 }
 .sbOptions a:hover{
-  color: @color2;
+  color: darken(@color4, 10%);
 }
 .sbOptions li.last a{
   border-bottom: none;

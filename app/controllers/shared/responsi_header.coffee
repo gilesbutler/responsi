@@ -74,7 +74,7 @@ class Index extends Spine.Controller
       $('.sbSelector').text(width + ' x ' + height)
 
   setupBookmarklet: ->
-    data = "javascript:(function(){var url=window.document.location.href;window.document.location.href='http://respon.si/#/'+url})()"
+    data = "javascript:window.location='http://respon.si/#/'+window.location"
     @bookmarklet.attr('href', data).hover( 
       => @tip.slideDown 'slow'
       => @tip.slideUp 'slow'

@@ -660,10 +660,10 @@ body:after {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  text-shadow: 1px 1px 1px #ffffff;
+  text-shadow: 2px 2px 1px #ffffff;
   background: none;
   border: none;
-  color: #272727;
+  color: #6f9fb4;
   display: inline-block;
   font-family: 'Squada One', cursive;
   font-size: 23px;
@@ -676,11 +676,16 @@ body:after {
   text-transform: uppercase;
 }
 .sbHolder {
+  -webkit-box-shadow: 2px 2px 2px #ffffff;
+  -moz-box-shadow: 2px 2px 2px #ffffff;
+  box-shadow: 2px 2px 2px #ffffff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   background: #fff;
-  border: 1px solid #ddd;
+  border-color: #ddd #f0f0f0 #f0f0f0 #ddd;
+  border-style: solid;
+  border-width: 1px;
   display: inline-block;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -706,7 +711,7 @@ body:after {
 .sbSelector:link,
 .sbSelector:visited,
 .sbSelector:hover {
-  color: #aaaaaa;
+  color: #91b5c5;
   outline: none;
   text-decoration: none;
 }
@@ -740,8 +745,9 @@ body:after {
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
-  background-color: #fff;
+  background-color: #fefefe;
   border: solid 1px #ddd;
+  border-right-color: #f0f0f0;
   border-top: 0;
   list-style: none;
   left: -1px;
@@ -755,7 +761,11 @@ body:after {
   overflow-y: auto;
 }
 .sbOptions li {
+  line-height: 1;
   padding: 0 7px;
+}
+.sbOptions li:last-child a {
+  border-bottom: none;
 }
 .sbOptions a {
   border-bottom: dashed 1px #ddd;
@@ -763,16 +773,13 @@ body:after {
   outline: none;
   padding: 7px 0 7px 3px;
 }
-.sbOptions a:last-child {
-  border-bottom: none;
-}
 .sbOptions a:link,
 .sbOptions a:visited {
-  color: #666;
+  color: #91b5c5;
   text-decoration: none;
 }
 .sbOptions a:hover {
-  color: #272727;
+  color: #52879e;
 }
 .sbOptions li.last a {
   border-bottom: none;
@@ -1065,7 +1072,7 @@ body {
 }
 .header .container h1 {
   text-shadow: 1px 1px 1px #ffffff;
-  color: #272727;
+  color: #a36a6c;
   display: inline-block;
   float: left;
   font-size: 45px;
@@ -1079,18 +1086,23 @@ body {
 .header .container > section #controls {
   display: inline-block;
   float: right;
-  margin-top: 11px;
+  margin-top: 14px;
   text-align: right;
   vertical-align: top;
   width: 70%;
 }
 .header .container > section #controls .url-input {
+  -webkit-box-shadow: 2px 2px 2px #ffffff;
+  -moz-box-shadow: 2px 2px 2px #ffffff;
+  box-shadow: 2px 2px 2px #ffffff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  background: #fff;
-  border: 1px solid #ddd;
-  color: #343434;
+  background: #fefefe;
+  border-color: #ddd #f0f0f0 #f0f0f0 #ddd;
+  border-style: solid;
+  border-width: 1px;
+  color: #6f9fb4;
   display: inline-block;
   font-size: 16px;
   height: 31px;
@@ -1107,10 +1119,10 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  text-shadow: 1px 1px 1px #ffffff;
+  text-shadow: 2px 2px 1px #ffffff;
   background: none;
   border: none;
-  color: #272727;
+  color: #6f9fb4;
   display: inline-block;
   font-family: 'Squada One', cursive;
   font-size: 23px;
@@ -1126,10 +1138,10 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  text-shadow: 1px 1px 1px #ffffff;
+  text-shadow: 2px 2px 1px #ffffff;
   background: none;
   border: none;
-  color: #272727;
+  color: #6f9fb4;
   display: inline-block;
   font-family: 'Squada One', cursive;
   font-size: 23px;
@@ -1146,17 +1158,18 @@ body {
   border-right: 1px solid #fff;
   display: inline-block;
   float: right;
-  height: 60px;
+  height: 65px;
   margin: 0 9px;
   overflow: hidden;
   width: 1px;
 }
 .header .container .bookmark {
   background: url(images/css/bookmark.png) no-repeat 9px 0;
+  cursor: pointer;
   display: inline-block;
   float: right;
   height: 39px;
-  margin-top: 7px;
+  margin-top: 10px;
   text-decoration: none;
   text-indent: -9999px;
   vertical-align: top;
@@ -1173,7 +1186,7 @@ body {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
-  color: #272727;
+  color: #6f9fb4;
   display: none;
   position: absolute;
   text-indent: 0;
@@ -1187,15 +1200,15 @@ body {
   padding: 10px 5px 5px;
 }
 ::-webkit-input-placeholder {
-  color: #aaaaaa;
+  color: #91b5c5;
   font-size: 16px;
 }
 :-moz-placeholder {
-  color: #aaaaaa;
+  color: #91b5c5;
   font-size: 16px;
 }
 :-ms-input-placeholder {
-  color: #aaaaaa;
+  color: #91b5c5;
   font-size: 16px;
 }
 /*
@@ -1268,13 +1281,13 @@ body {
   width: 750px;
 }
 .main #logo {
-  background: url(images/css/logo.png) no-repeat 0 0;
-  height: 89px;
+  background: url(images/css/logo.jpg) no-repeat 0 0;
+  height: 164px;
   left: 0;
   margin: 0 auto;
   position: absolute;
   right: 0;
-  top: 200px;
+  top: 180px;
   width: 455px;
 }
 /*

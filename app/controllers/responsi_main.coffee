@@ -16,12 +16,17 @@ class Index extends Spine.Controller
     super
     @active @change
 
-  render: ->
+  render: (params) ->
     @html require('views/index')
     # Check if user has loaded app already
     @firstLoad()
-    # Check for url in localStorage
-    @reLoadUrl()
+    # Check for url in parameters then in localStorage
+    if params
+      if !params.match '^https?://'
+        params = 'http://' + params
+      @mainFrame.attr 'src', params
+    else
+      @reLoadUrl()
     # Check for sizes in localStorage
     @reLoadSizes()
     # Setup resize plugin
@@ -47,7 +52,7 @@ class Index extends Spine.Controller
     localStorage.setItem "height", @frameHolder.height()
 
   change: (params) =>
-    @render()
+    @render(params)
 
   firstLoad: ->
     # Check to see if the user has already loaded the app

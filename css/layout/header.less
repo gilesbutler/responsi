@@ -30,15 +30,18 @@
       #controls {
         display: inline-block;
         float: right;
-        margin-top: 11px;
+        margin-top: 14px;
         text-align: right;
         vertical-align: top;
         width: 70%;
         .url-input {
+          #hl.drop-shadow(2px, 2px, 2px, #fff);
           #hl.round-all-corners();
-          background: #fff;
-          border: 1px solid #ddd;
-          color: lighten(@color2, 5%);
+          background: #fefefe;
+          border-color: #ddd #f0f0f0 #f0f0f0 #ddd;
+          border-style: solid;
+          border-width: 1px;
+          color: @color4;
           display: inline-block;
           font-size: 16px;
           height: 31px;
@@ -64,17 +67,18 @@
       border-right: 1px solid #fff;
       display: inline-block;
       float: right;
-      height: 60px;
+      height: 65px;
       margin: 0 9px;
       overflow: hidden;
       width: 1px;
     }
     .bookmark {
       background: url(images/css/bookmark.png) no-repeat 9px 0;
+      cursor: pointer;
       display: inline-block;
       float: right;
       height: 39px;
-      margin-top: 7px;
+      margin-top: 10px;
       text-decoration: none;
       text-indent: -9999px;
       vertical-align: top;
@@ -86,7 +90,7 @@
     #tip {
       #hl.text-shadow(1px, 1px, 0, #fff);
       #hl.rounded-corners(0, 0, 10px, 10px);
-      color: @color2;
+      color: @color4;
       display: none;
       position: absolute;
       text-indent: 0;
@@ -102,14 +106,14 @@
   }
 }
 ::-webkit-input-placeholder {
-  color: @color3;
+  color: lighten(@color4, 10%);
   font-size: 16px;
 }
 :-moz-placeholder {
-  color: @color3;
+  color: lighten(@color4, 10%);
   font-size: 16px;
 }
 :-ms-input-placeholder {
-  color: @color3;
+  color: lighten(@color4, 10%);
   font-size: 16px;
 }
