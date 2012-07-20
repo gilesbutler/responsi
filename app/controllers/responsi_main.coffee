@@ -22,9 +22,7 @@ class Index extends Spine.Controller
     @firstLoad()
     # Check for url in parameters then in localStorage
     if params
-      if !params.match '^https?://'
-        params = 'http://' + params
-      @mainFrame.attr 'src', params
+      @loadUrl decodeURIComponent(params)
     else
       @reLoadUrl()
     # Check for sizes in localStorage
@@ -60,6 +58,11 @@ class Index extends Spine.Controller
     if !@loaded
       @append Intro
       localStorage.setItem "loaded", true
+
+  loadUrl: (params) ->
+    if !params.match '^https?://'
+      params = 'http://' + params
+    @mainFrame.attr 'src', params
 
   reLoadUrl: ->
     @urlInput = $('.url-input')

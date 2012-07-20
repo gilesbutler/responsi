@@ -27,7 +27,7 @@ class Index extends Spine.Controller
     @reLoadSizes()
     @setupBookmarklet()
     if params
-      @loadUrl params
+      @loadUrl decodeURIComponent(params)
 
   change: (params) =>
     @render(params)
@@ -74,7 +74,8 @@ class Index extends Spine.Controller
       $('.sbSelector').text(width + ' x ' + height)
 
   setupBookmarklet: ->
-    data = "javascript:window.location='http://respon.si/#/'+window.location"
+    # data = "javascript:(function(){url=encodeURIComponent(window.location);alert(url)})()"
+    data = "javascript:(function(){url=encodeURIComponent(window.location.href);window.location.href='http://respon.si/#/'+url;})()"
     @bookmarklet.attr('href', data).hover( 
       => @tip.slideDown 'slow'
       => @tip.slideUp 'slow'
