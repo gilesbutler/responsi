@@ -663,7 +663,7 @@ body:after {
   text-shadow: 2px 2px 1px #ffffff;
   background: none;
   border: none;
-  color: #6f9fb4;
+  color: #515151;
   display: inline-block;
   font-family: 'Squada One', cursive;
   font-size: 23px;
@@ -711,7 +711,7 @@ body:after {
 .sbSelector:link,
 .sbSelector:visited,
 .sbSelector:hover {
-  color: #91b5c5;
+  color: #6a6a6a;
   outline: none;
   text-decoration: none;
 }
@@ -775,11 +775,11 @@ body:after {
 }
 .sbOptions a:link,
 .sbOptions a:visited {
-  color: #91b5c5;
+  color: #6a6a6a;
   text-decoration: none;
 }
 .sbOptions a:hover {
-  color: #52879e;
+  color: #373737;
 }
 .sbOptions li.last a {
   border-bottom: none;
@@ -1034,7 +1034,7 @@ table {
 }
 html,
 body {
-  background: #272727 url(images/css/bkg.jpg) repeat 0 0;
+  background: #f8f8f8;
   height: 100%;
   line-height: 1;
 }
@@ -1048,7 +1048,11 @@ body {
 *
 */
 .header {
+  -webkit-box-shadow: 0 1px 0 #ffffff;
+  -moz-box-shadow: 0 1px 0 #ffffff;
+  box-shadow: 0 1px 0 #ffffff;
   background: #fafafa;
+  border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
 }
 .header .container {
@@ -1072,13 +1076,13 @@ body {
 }
 .header .container h1 {
   text-shadow: 1px 1px 1px #ffffff;
-  color: #a36a6c;
+  color: #f8f8f8;
   display: inline-block;
   float: left;
   font-size: 45px;
   letter-spacing: -2px;
   line-height: 40px;
-  margin: 10px 0 0;
+  margin: 14px 0 0;
 }
 .header .container > section {
   position: relative;
@@ -1086,7 +1090,7 @@ body {
 .header .container > section #controls {
   display: inline-block;
   float: right;
-  margin-top: 14px;
+  margin-top: 10px;
   text-align: right;
   vertical-align: top;
   width: 70%;
@@ -1102,7 +1106,7 @@ body {
   border-color: #ddd #f0f0f0 #f0f0f0 #ddd;
   border-style: solid;
   border-width: 1px;
-  color: #6f9fb4;
+  color: #515151;
   display: inline-block;
   font-size: 16px;
   height: 31px;
@@ -1122,7 +1126,7 @@ body {
   text-shadow: 2px 2px 1px #ffffff;
   background: none;
   border: none;
-  color: #6f9fb4;
+  color: #515151;
   display: inline-block;
   font-family: 'Squada One', cursive;
   font-size: 23px;
@@ -1141,7 +1145,7 @@ body {
   text-shadow: 2px 2px 1px #ffffff;
   background: none;
   border: none;
-  color: #6f9fb4;
+  color: #515151;
   display: inline-block;
   font-family: 'Squada One', cursive;
   font-size: 23px;
@@ -1158,7 +1162,7 @@ body {
   border-right: 1px solid #fff;
   display: inline-block;
   float: right;
-  height: 65px;
+  height: 60px;
   margin: 0 9px;
   overflow: hidden;
   width: 1px;
@@ -1169,7 +1173,7 @@ body {
   display: inline-block;
   float: right;
   height: 39px;
-  margin-top: 10px;
+  margin-top: 7px;
   text-decoration: none;
   text-indent: -9999px;
   vertical-align: top;
@@ -1186,7 +1190,7 @@ body {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
-  color: #6f9fb4;
+  color: #515151;
   display: none;
   position: absolute;
   text-indent: 0;
@@ -1200,15 +1204,15 @@ body {
   padding: 10px 5px 5px;
 }
 ::-webkit-input-placeholder {
-  color: #91b5c5;
+  color: #6a6a6a;
   font-size: 16px;
 }
 :-moz-placeholder {
-  color: #91b5c5;
+  color: #6a6a6a;
   font-size: 16px;
 }
 :-ms-input-placeholder {
-  color: #91b5c5;
+  color: #6a6a6a;
   font-size: 16px;
 }
 /*
@@ -1225,7 +1229,7 @@ body {
 }
 .main .responsi-frame {
   background: white;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   height: 480px;
   position: relative;
   width: 320px;
@@ -1251,14 +1255,19 @@ body {
   left: 0;
 }
 .main .responsi-frame .ui-resizable-se {
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid black;
-  border-left: 10px solid transparent;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid #515151;
+  border-left: 15px solid transparent;
   bottom: 1px;
   cursor: se-resize;
   height: 0;
   right: 1px;
   width: 0;
+}
+.main .responsi-frame.ui-resizable-resizing {
+  -webkit-box-shadow: 0 0 10px #cccccc;
+  -moz-box-shadow: 0 0 10px #cccccc;
+  box-shadow: 0 0 10px #cccccc;
 }
 .main .responsi-frame .mask {
   display: none;
@@ -1282,13 +1291,13 @@ body {
 }
 .main #logo {
   background: url(images/css/logo.jpg) no-repeat 0 0;
-  height: 164px;
+  height: 244px;
   left: 0;
   margin: 0 auto;
   position: absolute;
   right: 0;
   top: 180px;
-  width: 455px;
+  width: 660px;
 }
 /*
 *
