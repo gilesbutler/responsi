@@ -2,9 +2,11 @@
   %h1 
     %img{ src: "images/css/logo_header.jpg", alt: "Responsi", title: "Responsi" }
   %section
+    %a{ class: 'twitter', href: "http://twitter.com/responsiapp", title: "Follow @ Responsiapp" } Twitter
     %a{ class: 'bookmark', id: 'bookmarklet', href: "#" } Responsi
     #tip Drag me to your bookmarks!
-    .divider
+    %a{ class: 'rotate', href: "#", title: "Rotate" } Rotate
+    / .divider
     %form#controls
       %input{ name: "url", type: "text", placeholder: "Enter the url you want to test&hellip;", class: "url-input" }
       %input{ name: "submit", type: "submit", value: "Go", class: "url-submit" }
@@ -24,4 +26,3 @@
           1280 x 600
         %option{ value: "1920x900", data: { width: 1920, height: 900 } }
           1920 x 900
-      %input{ name: "rotate", type: "button", value: "Rotate", class: "rotate" }

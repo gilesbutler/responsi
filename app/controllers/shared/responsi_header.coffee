@@ -62,7 +62,8 @@ class Index extends Spine.Controller
       localStorage.setItem 'height', sizes.height
       localStorage.setItem 'width', sizes.width
 
-  rotate: ->
+  rotate: (e) ->
+    e.preventDefault()
     @frameHolder = $('#frame_holder')
     height = @frameHolder.height()
     width = @frameHolder.width()

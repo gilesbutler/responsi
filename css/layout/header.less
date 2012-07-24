@@ -33,34 +33,34 @@
         display: inline-block;
         float: right;
         margin-top: 10px;
+        position: relative;
         text-align: right;
         vertical-align: top;
         width: 70%;
         .url-input {
           #hl.drop-shadow(2px, 2px, 2px, #fff);
           #hl.round-all-corners();
-          background: #fefefe;
+          background: #fff;
           border-color: #ddd #f0f0f0 #f0f0f0 #ddd;
           border-style: solid;
           border-width: 1px;
           color: @color4;
           display: inline-block;
           font-size: 16px;
-          height: 31px;
+          height: 33px;
           line-height: 18px;
-          margin: 0;
-          padding: 4px 10px 2px;
+          margin: 0 10px 0 0;
+          padding: 3px 39px 3px 10px;
           vertical-align: bottom;
-          width: 45%;
+          width: 50%;
           &:focus {
             outline: none;
           }
         }
         .url-submit {
           .btn();
-        }
-        .rotate {
-          .btn();
+          left: 476px;
+          position: absolute;
         }
       }
     }
@@ -74,35 +74,68 @@
       overflow: hidden;
       width: 1px;
     }
-    .bookmark {
-      background: url(images/css/bookmark.png) no-repeat 9px 0;
+    .rotate {
+      background: url(images/css/sprite.png) no-repeat 0 -400px;
       cursor: pointer;
       display: inline-block;
       float: right;
       height: 39px;
-      margin-top: 7px;
+      margin: 7px 0 0 15px;
+      text-decoration: none;
+      text-indent: -9999px;
+      vertical-align: top;
+      width: 28px;
+      &:hover {
+        background-position: 0 -443px;
+      }
+    }
+    .twitter {
+      background: url(images/css/sprite.png) no-repeat 0 -305px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 39px;
+      margin: 7px 0 0 20px;
+      text-decoration: none;
+      text-indent: -9999px;
+      vertical-align: top;
+      width: 28px;
+      &:hover {
+        background-position: 0 -345px;
+      }
+    }
+    .bookmark {
+      background: url(images/css/sprite.png) no-repeat 0 -215px;
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      height: 39px;
+      margin: 7px 0 0 10px;
       text-decoration: none;
       text-indent: -9999px;
       vertical-align: top;
       width: 24px;
       &:hover {
-        background-position: -27px 0;
+        background-position: 0 -262px;
       }
     }
     #tip {
       #hl.text-shadow(1px, 1px, 0, #fff);
       #hl.rounded-corners(0, 0, 10px, 10px);
+      border-color: #ddd;
+      border-style: solid;
+      border-width: 0 1px 1px;
       color: @color4;
       display: none;
       position: absolute;
       text-indent: 0;
-      right: -47px;
+      right: -4px;
       background: @color1;
       width: 100px;
       font-size: 12px;
       line-height: 1.5;
       text-align: center;
-      top: 60px;
+      top: 58px;
       padding: 10px 5px 5px;
     }
   }
