@@ -58,6 +58,10 @@ class Index extends Spine.Controller
       return false
     else
       sizes = $(e.currentTarget[index]).data()
+      if sizes.width > $('body').width()
+        $('body').width(sizes.width + 20)
+      else
+        $('body').width('')
       @frameHolder.height(sizes.height).width(sizes.width)
       localStorage.setItem 'height', sizes.height
       localStorage.setItem 'width', sizes.width
@@ -74,6 +78,8 @@ class Index extends Spine.Controller
     height = localStorage.getItem "height"
     if height and width
       $('.sbSelector').text(width + ' x ' + height)
+      if width > $('body').width()
+        $('body').width(parseInt(width) + 20)
 
   setupBookmarklet: ->
     # data = "javascript:(function(){url=encodeURIComponent(window.location);alert(url)})()"

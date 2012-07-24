@@ -43,11 +43,11 @@ class Index extends Spine.Controller
         @saveSize()
 
   saveSize: ->
-    dimensions = @frameHolder.width() + ' x ' + @frameHolder.height()
+    dimensions = Math.round(@frameHolder.width()) + ' x ' + Math.round(@frameHolder.height())
     $('.sbSelector').text(dimensions)
     $('.sbOptions li:first a').text(dimensions)
-    localStorage.setItem "width", @frameHolder.width()
-    localStorage.setItem "height", @frameHolder.height()
+    localStorage.setItem "width", Math.round(@frameHolder.width())
+    localStorage.setItem "height", Math.round(@frameHolder.height())
 
   change: (params) =>
     @render(params)
