@@ -42,11 +42,12 @@ class Index extends Spine.Controller
     # Check the input has http:// if not add it
     if !url.match '^https?://'
       url = 'http://' + url
-      @urlInput.val(url)
     # Set frame src to the url
     @mainFrame.attr 'src', url
     # Save url to localStorage
     localStorage.setItem 'url', url
+    # Add url to url-input field
+    @urlInput.val(url)
 
   changeSize: (e) ->
     e.preventDefault()

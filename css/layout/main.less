@@ -12,7 +12,7 @@
   position: relative;
   .responsi-frame {
     background: white;
-    border: 1px solid #000;
+    border: 1px solid #ccc;
     height: 480px;
     position: relative;
     width: 320px;
@@ -38,14 +38,17 @@
       left: 0;
     }
     .ui-resizable-se {
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid black; 
-      border-left:10px solid transparent;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid #515151; 
+      border-left:15px solid transparent;
       bottom: 1px;
       cursor: se-resize;
       height: 0; 
       right: 1px;
       width: 0; 
+    }
+    &.ui-resizable-resizing {
+      #hl.drop-shadow(0, 0, 10px, #ccc);
     }
     .mask {
       display: none;
@@ -70,12 +73,12 @@
   }
   #logo {
     background: url(images/css/logo.jpg) no-repeat 0 0;
-    height: 164px;
+    height: 244px;
     left: 0;
     margin: 0 auto;
     position: absolute;
     right: 0;
     top: 180px;
-    width: 455px;
+    width: 660px;
   }
 }

@@ -54,7 +54,11 @@ class Index extends Spine.Controller
 
   firstLoad: ->
     # Check to see if the user has already loaded the app
-    @loaded = localStorage.getItem "loaded"
+    height = localStorage.getItem "height"
+    width = localStorage.getItem "width"
+    loaded = localStorage.getItem "loaded"
+    if height and width and loaded
+      @loaded = true
     if !@loaded
       @append Intro
       localStorage.setItem "loaded", true
