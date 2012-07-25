@@ -1,5 +1,6 @@
 require('lib/setup')
 require('lib/jquery-ui')
+require('lib/jquery.ui.touch-punch.min')
 require('lib/jquery.selectbox.min')
 
 Spine    = require('spine')

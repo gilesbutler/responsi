@@ -1,5 +1,4 @@
 Spine   = require('spine')
-Manager = require('spine/lib/manager')
 $       = Spine.$
 
 Header  = require('controllers/shared/responsi_header')

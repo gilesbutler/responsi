@@ -28,7 +28,7 @@
   width: 90px;
 }
 .sbSelector:link, .sbSelector:visited, .sbSelector:hover{
-  color: lighten(@color4, 10%);
+  color: @color3;
   outline: none;
   text-decoration: none;
 }
@@ -62,6 +62,7 @@
   
 }
 .sbOptions{
+  #hl.drop-shadow(1px, 0, 0, #fff);
   #hl.rounded-corners(0, 0, 5px, 5px);
   background-color: #fefefe;
   border: solid 1px #ddd;
@@ -91,14 +92,14 @@
   border-bottom: dashed 1px #ddd;
   display: block;
   outline: none;
-  padding: 7px 0 7px 3px;
+  padding: 10px 0 10px 3px;
 }
 .sbOptions a:link, .sbOptions a:visited{
-  color: lighten(@color4, 10%);
+  color: @color3;
   text-decoration: none;
 }
 .sbOptions a:hover{
-  color: darken(@color4, 10%);
+  color: darken(@color4, 30%);
 }
 .sbOptions li.last a{
   border-bottom: none;

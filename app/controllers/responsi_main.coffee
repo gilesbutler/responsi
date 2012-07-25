@@ -11,6 +11,7 @@ class Index extends Spine.Controller
     '#frame_holder':          'frameHolder'
     '#main_frame':            'mainFrame'
     '#intro':                 'intro'
+    '#resizer':               'resizer'
 
   constructor: ->
     super
@@ -28,6 +29,9 @@ class Index extends Spine.Controller
     # Check for sizes in localStorage
     @reLoadSizes()
     # Setup resize plugin
+    @setupResizing()
+
+  setupResizing: ->
     mask = document.querySelector '.mask'
     sizes = document.getElementById 'sizes'
     @frameHolder.resizable
