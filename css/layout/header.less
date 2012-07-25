@@ -6,9 +6,9 @@
 */
 
 .header {
-  #hl.drop-shadow(0, 1px, 0, #fff);
+  #hl.drop-shadow(0, 1px, 0, #111);
   #hl.background-gradient(darken(@color1, 10%), @color2, @color2);
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #aaa;
   margin-bottom: 20px;
   .container {
     .clearfix();
@@ -29,10 +29,14 @@
       margin: 14px auto 6px;
       width: 140px;
       .logo {
-        background: url(images/css/sprite.png) no-repeat 0 -511px;
+        background: url(images/css/sprite.png) no-repeat 0 -406px;
+        .retinaSprite();
         display: block;
         height: 39px;
         width: 140px;
+        &:hover{
+          background-position: 0 -479px;
+        }
       }
       @media (max-width: 767px) {
         display: block;
@@ -89,7 +93,8 @@
       width: 1px;
     }
     .rotate {
-      background: url(images/css/sprite.png) no-repeat 0 -400px;
+      background: url(images/css/sprite.png) no-repeat 4px -298px;
+      .retinaSprite();
       cursor: pointer;
       display: inline-block;
       float: right;
@@ -98,39 +103,44 @@
       text-decoration: none;
       text-indent: -9999px;
       vertical-align: top;
-      width: 28px;
+      width: 30px;
       &:hover {
-        background-position: 0 -443px;
+        background-position: 0 -341px;
       }
     }
     .twitter {
-      background: url(images/css/sprite.png) no-repeat 0 -305px;
+      background: url(images/css/sprite.png) no-repeat 0 -205px;
+      .retinaSprite();
       cursor: pointer;
       display: inline-block;
       float: right;
       height: 39px;
-      margin: 7px 0 0 20px;
+      margin: 7px 0 0 14px;
       text-decoration: none;
       text-indent: -9999px;
       vertical-align: top;
       width: 28px;
       &:hover {
-        background-position: 0 -345px;
+        background-position: 0 -250px;
       }
     }
     .bookmark {
-      background: url(images/css/sprite.png) no-repeat 0 -215px;
+      background: url(images/css/sprite.png) no-repeat -23px -109px;
+      .retinaSprite();
       cursor: pointer;
       display: inline-block;
       float: right;
-      height: 39px;
-      margin: 7px 0 0 10px;
+      height: 36px;
+      margin: 13px 0 0 10px;
       text-decoration: none;
       text-indent: -9999px;
       vertical-align: top;
-      width: 24px;
+      width: 27px;
       &:hover {
-        background-position: 0 -262px;
+        background-position: -23px -165px;
+      }
+      @media(max-width: 1024px) {
+        display: none;
       }
     }
     #tip {
@@ -151,6 +161,50 @@
       text-indent: 0;
       top: 58px;
       width: 100px;
+    }
+  }
+  // Alerts Panel
+  #alerts {
+    #hl.inner-shadow(0, 0, 10px, #000);
+    background: #222;
+    border-top: 1px solid #aaa;
+    bottom: -1px;
+    display: none;
+    height: 30px;
+    padding-top: 10px;
+    position: relative;
+    .alert-title {
+      #hl.text-shadow(1px, 1px, 1px, #000);
+      display: inline-block;
+      font-family: @mainFont;
+      color: #d6f2fa;
+      font-size: 18px;
+      font-weight: 900;
+      margin: 0 5px 0 0;
+      &.warning {
+        color: #f2d2d2;
+      }
+      &.success {
+        color: #d1f2c2;
+      }
+    }
+    .alert-message {
+      #hl.text-shadow(1px, 1px, 1px, #000);
+      color: #fff;      
+      display: inline-block;
+      line-height: 1;
+      font-size: 16px;
+      margin: 0;
+    }
+    .alert-close {
+      #hl.text-shadow(1px, 1px, 0, #000);
+      color: #ebebeb;
+      display: inline-block;
+      float: right;
+      font-family: @titleFont;
+      font-size: 20px;
+      margin-top: 10px;
+      text-decoration: none;
     }
   }
 }

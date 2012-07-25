@@ -6,16 +6,21 @@ class Index extends Spine.Controller
   tag: 'header'
 
   elements: 
-    ".url-input":   "urlInput"
-    ".url-submit":  "urlSubmit"
-    "#sizes":       "sizes"
-    "#bookmarklet": "bookmarklet"
-    "#tip":         "tip"
+    ".url-input":         "urlInput"
+    ".url-submit":        "urlSubmit"
+    "#sizes":             "sizes"
+    "#bookmarklet":       "bookmarklet"
+    "#tip":               "tip"
+    "#alerts":            "alerts"
+    ".alert-close":       "alertClose"
+    ".alert-title span":  "alertTitle"
+    ".alert-message":     "alertMessage"
 
   events: 
     "click .url-submit":  "submit"
     "change .sizes":      "changeSize"
     "click .rotate":      "rotate"
+    "click .alert-close": "closeAlert"
 
   constructor: ->
     super
@@ -28,6 +33,7 @@ class Index extends Spine.Controller
     @setupBookmarklet()
     if params
       @loadUrl decodeURIComponent(params)
+    @checkForIpad()
 
   change: (params) =>
     @render(params)
@@ -82,12 +88,32 @@ class Index extends Spine.Controller
         $('body').width(parseInt(width) + 20)
 
   setupBookmarklet: ->
-    # data = "javascript:(function(){url=encodeURIComponent(window.location);alert(url)})()"
     data = "javascript:(function(){url=encodeURIComponent(window.location.href);window.location.href='http://respon.si/#/'+url;})()"
     @bookmarklet.attr('href', data).hover( 
       => @tip.slideDown 'slow'
       => @tip.slideUp 'slow'
     )
+
+  closeAlert: (e) ->
+    e.preventDefault()
+    @alerts.slideUp()
+
+  showAlert: (title, message) ->
+    if title
+      @alertTitle.text title
+    if message
+      @alertMessage.text message
+    if title or message
+      @alerts.slideDown()
+
+  checkForIpad: ->
+    ua = navigator.userAgent
+    isiPad = /iPad/i.test(ua) || /iPhone OS 3_1_2/i.test(ua) || /iPhone OS 3_2_2/i.test(ua)
+    noticeDisplayed = localStorage.getItem "noticeDisplayed"
+    if isiPad
+      if !noticeDisplayed
+        @showAlert 'Notice', 'iPad support is currently experimental.'
+        localStorage.setItem "noticeDisplayed", true
 
 class Header extends Spine.Stack
   className: 'header stack'

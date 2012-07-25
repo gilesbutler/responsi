@@ -49,6 +49,7 @@
       width: 0; 
       @media (max-width: 1024px) {
         border-width: 44px;
+        opacity: 0.8;
       }
     }
     &.ui-resizable-resizing {
@@ -69,14 +70,38 @@
     }
   }
   #intro {
-    background: url(images/css/intro.png) no-repeat 0 0;
     height: 510px;
     left: 0;
     margin: 0 auto;
     position: absolute;
     right: 0;
     top: 0;
-    width: 750px;
+    width: 890px;
+    h2 {
+      color: #484848;
+      font-size: 36px;
+      left: 261px;
+      position: absolute;
+      top: 144px;
+    }
+    > div {
+      color: #2b2b2b;
+      font-family: @titleFont;
+      font-size: 36px;
+      position: absolute;
+      &.item1 {
+        left: 270px;
+        top: 0;
+      }
+      &.item2 {
+        left: 676px;
+        top: 0;
+      }
+      &.item3 {
+        bottom: 30px;
+        left: 85px;
+      }
+    }
   }
   // Logo wrapped in a container to prevent download on smaller resolutions
   // http://timkadlec.com/mq/test3.php
@@ -84,6 +109,7 @@
     display: none;
     .holder {
       background: url(images/css/logo.jpg) no-repeat 0 0;
+      background-size: 650px 253px;
       height: 253px; 
       left: 0;
       margin: 0 auto;
