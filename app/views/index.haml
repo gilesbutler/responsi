@@ -1,4 +1,10 @@
 %section{ id: "frame_holder", class: 'responsi-frame' }
   .mask
   %iframe{ id: "main_frame", sandbox: "allow-same-origin allow-forms allow-scripts", src: "/frame.html", frameborder: "no" }
-%section{ id: "logo" }
+%section.too-small
+  %h2 Too Small!
+  %p We're sorry but we don't support resolutions under 768px.
+  %p Please use a device with a higher resolution.
+  %p Thank you
+%div{ id: "logo" }
+  %div{ class: "holder" }

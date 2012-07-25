@@ -3,10 +3,27 @@
 <head>
   <meta charset=utf-8>
   <title>Responsi</title>
+  <meta name="description" content="A media query playground">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Google Font -->
   <link href='http://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
+
+  <!-- Responsi Stylesheet -->
   <link rel="stylesheet" href="/application.css" type="text/css" charset="utf-8">
-  <script src="/application.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript" charset="utf-8">
+
+  <!-- PolyFill for IE9's lack of matchMedia Support -->
+  <!--[if IE 9]>
+    <script src="/js/matchMedia.js"></script>
+  <![endif]-->
+
+  <!-- Responsi App -->
+  <script src="/application.js"></script>
+
+  <!-- Run Responsi -->
+  <script>
     var jQuery  = require("jqueryify");
     var exports = this;
     jQuery(function(){
@@ -14,20 +31,34 @@
       exports.app = new App({el: $("body")});      
     });
   </script>
-   <script>
+
+  <!-- Google Analytics -->
+  <script>
       var _gaq=[['_setAccount','UA-33466533-1'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
-  <script type="text/javascript">
-    var uvOptions = {};
-    (function() {
-      var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-      uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/n8GIICgtV48sP5Ajouzyw.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-    })();
+
+  <!-- UserVoice -->
+  <script>
+    // Check media size
+    var mql = window.matchMedia("(max-width: 768px)");
+    mql.addListener(loadUserVoice);
+    if (mql.matches === false) {
+      loadUserVoice();
+    }
+    function loadUserVoice() {
+      var uvOptions = {};
+      (function() {
+        var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+        uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/n8GIICgtV48sP5Ajouzyw.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+      })();
+    }
   </script>
+
 </head>
-<body></body>
+<body>
+</body>
 </html>

@@ -57,10 +57,12 @@ class Index extends Spine.Controller
     height = localStorage.getItem "height"
     width = localStorage.getItem "width"
     loaded = localStorage.getItem "loaded"
+    mql = window.matchMedia "(max-width: 768px)"
     if height and width and loaded
       @loaded = true
     if !@loaded
-      @append Intro
+      if mql.matches is false
+        @append Intro
       localStorage.setItem "loaded", true
 
   loadUrl: (params) ->
