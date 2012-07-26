@@ -17,7 +17,7 @@ class Index extends Spine.Controller
     ".alert-message":     "alertMessage"
 
   events: 
-    "click .url-submit":  "submit"
+    "click .url-submit":  "submitUrl"
     "change .sizes":      "changeSize"
     "click .rotate":      "rotate"
     "click .alert-close": "closeAlert"
@@ -38,7 +38,7 @@ class Index extends Spine.Controller
   change: (params) =>
     @render(params)
 
-  submit: (e) ->
+  submitUrl: (e) ->
     e.preventDefault()
     if @urlInput.val()
       @loadUrl @urlInput.val()
@@ -59,6 +59,7 @@ class Index extends Spine.Controller
     e.preventDefault()
     @frameHolder = $('#frame_holder')
     $('#intro').fadeOut()
+    # Check to see if the we are on the first size and its value is ---
     index = e.currentTarget.selectedIndex
     if index is 0 and e.currentTarget[0].value is '---'
       return false
