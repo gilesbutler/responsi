@@ -114,6 +114,10 @@ class Index extends Spine.Controller
       if !noticeDisplayed
         @showAlert 'Notice', 'iPad support is currently experimental.'
         localStorage.setItem "noticeDisplayed", true
+      @changeUrlInputType()
+
+  changeUrlInputType: ->
+    document.querySelector('.url-input').type = 'url'
 
 class Header extends Spine.Stack
   className: 'header stack'
