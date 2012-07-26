@@ -1059,6 +1059,13 @@ body {
 .responsi {
   min-height: 100%;
 }
+noscript {
+  text-align: center;
+}
+noscript h1 {
+  color: #f8f8f8;
+  font-size: 36px;
+}
 /*
 *
 * File name: header.less
@@ -1488,6 +1495,9 @@ body {
     display: none;
   }
 }
+.main .old-ie {
+  display: none;
+}
 /*
 *
 * File name: frame.less
@@ -1502,4 +1512,28 @@ body {
   color: #ddd;
   font-size: 36px;
   text-align: center;
+}
+/*
+*
+* File name: ie.less
+* Info: Old Internet Explorer Overrides
+*
+*/
+.lt-ie9 .header .container > section {
+  display: none;
+}
+.lt-ie9 .main .index .responsi-frame {
+  display: none;
+}
+.lt-ie9 .main .index .old-ie {
+  display: block;
+  text-align: center;
+}
+.lt-ie9 .main .index .old-ie h2 {
+  color: #f8f8f8;
+  font-size: 36px;
+}
+.lt-ie9 .main .index .old-ie p {
+  color: #c5c5c5;
+  font-size: 20px;
 }
