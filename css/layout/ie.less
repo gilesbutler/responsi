@@ -1,0 +1,30 @@
+/*
+*
+* File name: ie.less
+* Info: Old Internet Explorer Overrides
+*
+*/
+
+
+.lt-ie9 {
+  .header .container > section {
+    display: none;
+  }
+  .main .index {
+    .responsi-frame {
+      display: none;
+    }
+    .old-ie {
+      display: block;
+      text-align: center;
+      h2 {
+        color: @color2;
+        font-size: 36px;
+      }
+      p {
+        color: darken(@color2, 20%);
+        font-size: 20px;
+      }
+    }
+  }
+}
