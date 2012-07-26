@@ -1292,6 +1292,7 @@ noscript h1 {
   text-indent: 0;
   top: 58px;
   width: 100px;
+  z-index: 2;
 }
 .header #alerts {
   -webkit-box-shadow: inset 0 0 10px #000000;
@@ -1519,21 +1520,24 @@ noscript h1 {
 * Info: Old Internet Explorer Overrides
 *
 */
-.lt-ie9 .header .container > section {
+.no-support .header {
+  background: #f8f8f8;
+}
+.no-support .header .container > section {
   display: none;
 }
-.lt-ie9 .main .index .responsi-frame {
+.no-support .main .index .responsi-frame {
   display: none;
 }
-.lt-ie9 .main .index .old-ie {
+.no-support .main .index .old-ie {
   display: block;
   text-align: center;
 }
-.lt-ie9 .main .index .old-ie h2 {
+.no-support .main .index .old-ie h2 {
   color: #f8f8f8;
   font-size: 36px;
 }
-.lt-ie9 .main .index .old-ie p {
+.no-support .main .index .old-ie p {
   color: #c5c5c5;
   font-size: 20px;
 }
