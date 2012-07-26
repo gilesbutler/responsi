@@ -40,8 +40,9 @@ class Index extends Spine.Controller
 
   submitUrl: (e) ->
     e.preventDefault()
-    if @urlInput.val()
-      @loadUrl @urlInput.val()
+    url = @urlInput.val()
+    if url
+      @loadUrl url
 
   loadUrl: (url) ->
     @mainFrame = $('#main_frame')
